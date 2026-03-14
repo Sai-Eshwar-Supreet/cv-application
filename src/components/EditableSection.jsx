@@ -7,8 +7,6 @@ function EditableSection({entry, editable, handleUpdate, handleDeletion, setEdit
 
         const formData = new FormData(event.target);
 
-        console.log(Object.fromEntries(formData));
-
         handleUpdate?.(entry.id, Object.fromEntries(formData));
     }
 

@@ -107,7 +107,7 @@ function App() {
   
       const index = entries.findIndex(entry => entry.id === entryId);
   
-      entries[index].data = data;
+      entries[index].data = {...entries[index].data, ...data};
 
       setPersonalDetails(entries);
   }
