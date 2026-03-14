@@ -25,18 +25,18 @@ function CollapsibleCard({cardName, index, handleMovement,  children}){
         handleMovement(index, direction)
     }
 
-    return <div className="collapsible">
+    return <section className="collapsible">
         <div>
-            <button onClick={toggleCollapse} className="collapse">{cardName}</button>
+            <header><button onClick={toggleCollapse} className="collapse">{cardName}</button></header>
             {handleMovement && <div className='move-bar'>
-                <button onClick={() => move(-1)} className="collapse">Move up</button>
-                <button onClick={() => move(1)} className="collapse">Move down</button>
+                <button onClick={() => move(-1)}>Move up</button>
+                <button onClick={() => move(1)}>Move down</button>
             </div>}
         </div>
         <div className={`container ${collapsed? 'collapsed': 'expanded'}`}>
             {!collapsed && children}
         </div>
-    </div>
+    </section>
 }
 
 export default CollapsibleCard;

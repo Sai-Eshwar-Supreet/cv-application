@@ -1,7 +1,7 @@
 import PersonalDetails from "../Items/PersonalDetails";
 import CollapsibleCard from "../utils/CollapsibleCard";
 
-function PersonalDetailsSection({entry, handleUpdate}){
+function EditPersonalDetailsSection({entry, handleUpdate}){
     return <CollapsibleCard cardName='PersonalDetails'>
                 <PersonalDetails 
                     data={entry} 
@@ -10,4 +10,4 @@ function PersonalDetailsSection({entry, handleUpdate}){
            </CollapsibleCard>
 }
 
-export default PersonalDetailsSection;
+export default EditPersonalDetailsSection;

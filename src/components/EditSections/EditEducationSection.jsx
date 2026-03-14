@@ -1,19 +1,20 @@
-import Experience from "../Items/Experience";
+import Education from "../Items/Education";
 import CollapsibleCard from "../utils/CollapsibleCard";
 
-function createExperienceEntry(){
+function createEducationEntry(){
   const id = crypto.randomUUID();
   return {
     id,
-    school:'',
-    degree: '',
+    company:'',
+    designation: '',
     startDate: '',
     endDate: '',
     location: '',
+    description: '',
   }
 }
 
-function ExperienceSection({entries, handleUpdate}){
+function EditEducationSection({entries, handleUpdate}){
 
     function handleEntryUpdate(entry){
         const newEntries = entries.map(e => {
@@ -23,7 +24,7 @@ function ExperienceSection({entries, handleUpdate}){
     }
 
     function addNewEntry(){
-        const newEntries = [...entries, createExperienceEntry()];
+        const newEntries = [...entries, createEducationEntry()];
 
         handleUpdate(newEntries);
     }
@@ -33,7 +34,6 @@ function ExperienceSection({entries, handleUpdate}){
 
         handleUpdate(newEntries);
     }
-    
 
     function handleMovement(from, direction){
         const to = from + direction;
@@ -55,18 +55,18 @@ function ExperienceSection({entries, handleUpdate}){
     }
 
     return (
-        <CollapsibleCard cardName='Experience'>
+        <CollapsibleCard cardName='Education'>
             <button onClick={addNewEntry}>Add</button>
             <ul>
                 {
                     entries.map((entry, index) => {
                         return <li key={entry.id}>
-                                    <CollapsibleCard cardName={entry.company? entry.company : 'New Experience'} index={index} handleMovement={handleMovement}>
-                                        <Experience
-                                            data={entry}
-                                            handleUpdate={handleEntryUpdate}
-                                            handleRemoval={removeEntry}
-                                        />
+                                    <CollapsibleCard cardName={entry.school? entry.school : 'Education Entry'} index={index} handleMovement={handleMovement}>
+                                        <Education
+                                                    data={entry}
+                                                    handleUpdate={handleEntryUpdate}
+                                                    handleRemoval={removeEntry}
+                                                />
                                     </CollapsibleCard>
                                 </li>
                     })
@@ -76,4 +76,4 @@ function ExperienceSection({entries, handleUpdate}){
     )
 }
 
-export default ExperienceSection;
+export default EditEducationSection;
