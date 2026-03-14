@@ -9,6 +9,7 @@ function createEducationEntry(){
     designation: '',
     startDate: '',
     endDate: '',
+    currentStudent: false,
     location: '',
     description: '',
   }

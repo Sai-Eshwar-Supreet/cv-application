@@ -1,3 +1,4 @@
+import Checkbox from "../Inputs/Checkbox";
 import Input from "../Inputs/Input";
 
 function Education({data, handleUpdate, handleRemoval}){
@@ -35,7 +36,16 @@ function Education({data, handleUpdate, handleRemoval}){
                         id='endDate'
                         label='End Date: '
                         value={data.endDate}
+                        disabled={data.currentStudent}
                         handleUpdate={(value) => handleUpdate({...data, endDate: value})}
+                    />
+                </li>
+                <li>
+                    <Checkbox
+                        id='currentStudent'
+                        label='Is currently studying here: '
+                        value={data.currentStudent}
+                        handleUpdate={(value) => handleUpdate({...data, currentStudent: value})}
                     />
                 </li>
                 <li>

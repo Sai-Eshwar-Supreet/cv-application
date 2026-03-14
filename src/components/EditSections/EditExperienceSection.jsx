@@ -9,6 +9,7 @@ function createExperienceEntry(){
     degree: '',
     startDate: '',
     endDate: '',
+    currentEmployee: false,
     location: '',
   }
 }
@@ -19,6 +20,7 @@ function EditExperienceSection({entries, handleUpdate}){
         const newEntries = entries.map(e => {
             return (e.id === entry.id)? entry : e;
         });
+
         handleUpdate(newEntries);
     }
 

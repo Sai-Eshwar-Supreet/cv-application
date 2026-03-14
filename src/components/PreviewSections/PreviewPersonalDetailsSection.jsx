@@ -2,7 +2,7 @@ function PreviewPersonalDetailsSection({entry}){
     return (
         <section>
             <header>
-                <h1>{entry.fullName}</h1>
+                <h2>{entry.fullName}</h2>
             </header>
                 <div className="contact-bar">
                     <div>

@@ -1,3 +1,4 @@
+import Checkbox from "../Inputs/Checkbox";
 import Input from "../Inputs/Input";
 import TextArea from "../Inputs/TextArea";
 
@@ -36,7 +37,16 @@ function Experience({data, handleUpdate, handleRemoval}){
                         id='endDate'
                         label='End Date: '
                         value={data.endDate}
+                        disabled={data.currentEmployee}
                         handleUpdate={(value) => handleUpdate({...data, endDate: value})}
+                    />
+                </li>
+                <li>
+                    <Checkbox
+                        id='currentEmployee'
+                        label='is currently employed here: '
+                        value={data.currentEmployee}
+                        handleUpdate={(value) => handleUpdate({...data, currentEmployee: value})}
                     />
                 </li>
                 <li>
