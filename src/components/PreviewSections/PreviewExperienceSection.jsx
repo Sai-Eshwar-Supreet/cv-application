@@ -1,19 +1,24 @@
+import { ICONS } from "../../Helpers/Icons";
+
 function PreviewExperienceSection({entries}){
     return (
         <section className="resume-section">
             <header className="resume-header">
-                <h3>Experience</h3>
+                <h3> 
+                    {ICONS.experience} 
+                    <span>Experience</span>
+                </h3>
             </header>
             {
                 entries.map((entry, index) => {
                     return (
-                        <section key={entry.id}>
+                        <section className="resume-entry" key={entry.id}>
                             <header>
-                                <h4>{index + 1}. {entry.company}</h4>
-                                <p>{entry.designation}</p> 
-                                <p>{entry.startDate}-{entry.currentEmployee? 'Present' : entry.endDate}</p>
-                                <p>{entry.location}</p>
-                                <pre>{entry.description}</pre>
+                                <h4 className="entry-element primary">{index + 1}. {entry.company}</h4>
+                                <p className="entry-element secondary">{entry.designation}</p> 
+                                <p className="entry-element tertiary">{entry.startDate}-{entry.currentEmployee? 'Present' : entry.endDate}</p>
+                                <p className="entry-element tertiary">{entry.location}</p>
+                                <pre className="entry-element secondary">{entry.description}</pre>
                             </header>
                         </section>
                     )

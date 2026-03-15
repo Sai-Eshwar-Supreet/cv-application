@@ -5,11 +5,14 @@
     flex-direction: column;
 }
 
-.resume{
+.resume-container{
     border: 2px solid var(--color-neutral-600);
     
     box-shadow: var(--shadow-heavy);
-    padding: 0 var(--space-large);
+}
+
+.resume{
+    padding:var(--space-large);
 }
 
 .hero-section{
@@ -18,8 +21,6 @@
     justify-content: center;
     align-items: center;
 
-
-    padding-top: var(--space-large);
     padding-bottom: var(--space-large);
 
     margin-bottom: var(--space-large);
@@ -55,4 +56,58 @@
 
 .contact-item+.contact-item{
     border-left: 1px solid var(--color-neutral-400);
+}
+
+/* Entries */
+
+.resume-section .resume-header{
+    padding-bottom: var(--space-small);
+
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semi);
+
+    border-bottom: 2px solid var(--color-neutral-200);
+    margin:var(--space-medium) 0;
+}
+
+.resume-section > .resume-header > h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-small);
+
+    height: 40px;
+} 
+
+.resume-header svg{
+    width: 40px;
+    height: 40px;
+}
+
+.entry-element{
+    padding-left: var(--space-large);
+}
+
+.entry-element.primary{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semi);
+}
+
+.entry-element.secondary{
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-neutral-800);
+}
+
+.entry-element.tertiary{
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-neutral-600);
+
+    display: flex;
+    gap: var(--space-small);
+}
+
+pre.entry-element{
+    white-space: pre-wrap;
 }

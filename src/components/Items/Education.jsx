@@ -49,15 +49,6 @@ function Education({data, handleUpdate}){
                         handleUpdate={(value) => handleUpdate({...data, currentStudent: value, ...(value? {endDate: ''}: {})})}
                     />
                 </li>
-                <li>
-                    <Input
-                        type='text'
-                        id='location'
-                        label='Location: '
-                        value={data.location}
-                        handleUpdate={(value) => handleUpdate({...data, location: value})}
-                    />
-                </li>
             </ul>
         </div>
     );

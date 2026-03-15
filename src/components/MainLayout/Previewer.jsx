@@ -7,10 +7,12 @@ import PreviewExperienceSection from '../PreviewSections/PreviewExperienceSectio
 function Previewer({state: {personalDetails, educationData, experienceData}, ref}){
     return <section className="panel previewer">
           <h2 className='panel-header'>PREVIEW</h2>
-          <div ref={ref} className="resume">
-            <PreviewPersonalDetailsSection entry={personalDetails.content}/>
-            <PreviewEducationSection entries={educationData.content} />
-            <PreviewExperienceSection entries={experienceData.content} />
+          <div className="resume-container">
+            <div ref={ref} className="resume">
+              <PreviewPersonalDetailsSection entry={personalDetails.content}/>
+              <PreviewEducationSection entries={educationData.content} />
+              <PreviewExperienceSection entries={experienceData.content} />
+            </div>
           </div>
         </section>
 }

@@ -4,14 +4,16 @@ import CollapsibleCard from "../utils/CollapsibleCard";
 
 function createExperienceEntry(){
   const id = crypto.randomUUID();
+  
   return {
     id,
-    school:'',
-    degree: '',
+    company:'',
+    designation: '',
     startDate: '',
     endDate: '',
-    currentEmployee: false,
+    currentStudent: false,
     location: '',
+    description: '',
   }
 }
 

@@ -6,13 +6,11 @@ function createEducationEntry(){
   const id = crypto.randomUUID();
   return {
     id,
-    company:'',
-    designation: '',
+    school:'',
+    degree: '',
     startDate: '',
     endDate: '',
-    currentStudent: false,
-    location: '',
-    description: '',
+    currentEmployee: false,
   }
 }
 
