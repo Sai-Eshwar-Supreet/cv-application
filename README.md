@@ -5,7 +5,7 @@ The app lets users enter personal details, education, and work experience while 
 
 ## Live Demo
 
-[View live page](https://cv-app-theta-liard.vercel.app)
+[View live page](https://cv-application-nine-liard.vercel.app)
 
 ## Overview
 
