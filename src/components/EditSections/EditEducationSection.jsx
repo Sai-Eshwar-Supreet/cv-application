@@ -10,7 +10,7 @@ function createEducationEntry(){
     degree: '',
     startDate: '',
     endDate: '',
-    currentEmployee: false,
+    currentStudent: false,
   }
 }
 

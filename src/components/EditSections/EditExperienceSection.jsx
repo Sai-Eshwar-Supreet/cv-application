@@ -11,7 +11,7 @@ function createExperienceEntry(){
     designation: '',
     startDate: '',
     endDate: '',
-    currentStudent: false,
+    currentEmployee: false,
     location: '',
     description: '',
   }
