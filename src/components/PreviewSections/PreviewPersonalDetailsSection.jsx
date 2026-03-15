@@ -1,20 +1,25 @@
+import { ICONS } from "../../Helpers/Icons";
+
 function PreviewPersonalDetailsSection({entry}){
     return (
-        <section>
-            <header>
-                <h2>{entry.fullName}</h2>
+        <section className="resume-section hero-section">
+            <header className="resume-header" >
+                <h3>{entry.fullName}</h3>
             </header>
-                <div className="contact-bar">
-                    <div>
-                        {entry.email}
-                    </div>
-                    <div>
-                        {entry.phoneNumber}
-                    </div>
-                    <div>
-                        {entry.location}
-                    </div>
-                </div>
+                <ul className="contact-bar">
+                    <li className="contact-item">
+                        {ICONS.email}
+                        <span>{entry.email}</span>
+                    </li>
+                    <li className="contact-item">
+                        {ICONS.phone}
+                        <span>{entry.phoneNumber}</span>
+                    </li>
+                    <li className="contact-item">
+                        {ICONS.location}
+                        <span>{entry.location}</span>
+                    </li>
+                </ul>
         </section>
     )
 }

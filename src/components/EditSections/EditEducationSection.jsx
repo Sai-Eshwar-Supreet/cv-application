@@ -1,3 +1,4 @@
+import { ICONS } from "../../Helpers/Icons";
 import Education from "../Items/Education";
 import CollapsibleCard from "../utils/CollapsibleCard";
 
@@ -25,7 +26,7 @@ function EditEducationSection({entries, handleUpdate}){
     }
 
     function addNewEntry(){
-        const newEntries = [...entries, createEducationEntry()];
+        const newEntries = [createEducationEntry(), ...entries];
 
         handleUpdate(newEntries);
     }
@@ -57,12 +58,12 @@ function EditEducationSection({entries, handleUpdate}){
 
     return (
         <CollapsibleCard cardName='Education'>
-            <button onClick={addNewEntry}>Add</button>
+            <button className="add-btn" onClick={addNewEntry}>{ICONS.add}</button>
             <ul>
                 {
                     entries.map((entry, index) => {
                         return <li key={entry.id}>
-                                    <CollapsibleCard cardName={entry.school? entry.school : 'Education Entry'} index={index} handleMovement={handleMovement}>
+                                    <CollapsibleCard cardName={entry.school? entry.school : 'Education Entry'} index={index} handleMovement={handleMovement} handleDeletion={() => removeEntry(entry.id)}>
                                         <Education
                                                     data={entry}
                                                     handleUpdate={handleEntryUpdate}

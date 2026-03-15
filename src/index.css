@@ -22,6 +22,7 @@ ul{
 
 :root{
     /* Font sizes */
+    --font-size-extra-large: 3rem;
     --font-size-large: 1.5rem;
     --font-size-medium: 1.25rem;
     --font-size-normal: 1rem;
@@ -37,6 +38,8 @@ ul{
     --space-small: 0.5rem;
     --space-medium: 1rem;
     --space-large: 1.5rem;
+    --space-far: 2rem;
+    --space-extreme: 4rem;
 
     /* Border radius */
     --radius-small: 8px;
@@ -53,12 +56,17 @@ ul{
     /* Colors */
     --color-bg-base: #fbfaf8;
     --color-neutral-900: black;
+    --color-neutral-800: rgb(77, 77, 77);
     --color-neutral-600: gray;
+    --color-neutral-400: rgb(167, 167, 167);
     --color-neutral-200: lightgray;
     --color-neutral-150: rgb(235, 235, 235);
     --color-neutral-100: white;
 
     --color-accent: #3b84cc;
+    --color-accent-faded: rgba(60, 133, 205, 0.3);
     --color-success: #11e245;
     --color-danger: #e21111;
+
+    --color-resume-header: ;
 }

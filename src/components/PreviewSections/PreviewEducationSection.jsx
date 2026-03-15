@@ -1,15 +1,15 @@
 function PreviewEducationSection({entries}){
     return (
-        <section>
-            <header>
-                <h2>Education</h2>
+        <section className="resume-section">
+            <header className="resume-header">
+                <h3>Education</h3>
             </header>
             {
                 entries.map((entry, index) => {
                     return (
                         <section key={entry.id}>
                             <header>
-                                <h3>{index + 1}. {entry.school}</h3>
+                                <h4>{index + 1}. {entry.school}</h4>
                                 <p>{entry.degree}</p> 
                                 <p>{entry.startDate}-{entry.currentStudent? 'Present' : entry.endDate}</p>
                                 <p>{entry.location}</p>

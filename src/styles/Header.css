@@ -6,7 +6,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: var(--space-small);
     padding: var(--space-medium);
+
+    background-color: var(--color-bg-base);
 }
 
 .header .logo{
@@ -29,6 +32,7 @@
 .header .tool-bar{
     display: flex;
     gap: var(--space-small);
+    align-items: center;
 
     margin-left: auto;
 }
@@ -64,6 +68,17 @@
 .header .download:hover svg{
     fill: var(--color-accent);
     animation: download-oscillate 1s infinite forwards ease;
+}
+
+@media (max-width: 786px) {
+    .header{
+        z-index: 1;
+        position:sticky;
+        top: 0;
+    }
+    .header .tool-bar{
+        margin: var(--space-small) 0;
+    }
 }
 
 @keyframes load-pulse {

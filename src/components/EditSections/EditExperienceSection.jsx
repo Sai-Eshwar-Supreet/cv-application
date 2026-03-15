@@ -1,3 +1,4 @@
+import { ICONS } from "../../Helpers/Icons";
 import Experience from "../Items/Experience";
 import CollapsibleCard from "../utils/CollapsibleCard";
 
@@ -25,7 +26,7 @@ function EditExperienceSection({entries, handleUpdate}){
     }
 
     function addNewEntry(){
-        const newEntries = [...entries, createExperienceEntry()];
+        const newEntries = [createExperienceEntry(), ...entries];
 
         handleUpdate(newEntries);
     }
@@ -58,12 +59,12 @@ function EditExperienceSection({entries, handleUpdate}){
 
     return (
         <CollapsibleCard cardName='Experience'>
-            <button onClick={addNewEntry}>Add</button>
+            <button className="add-btn" onClick={addNewEntry}>{ICONS.add}</button>
             <ul>
                 {
                     entries.map((entry, index) => {
                         return <li key={entry.id}>
-                                    <CollapsibleCard cardName={entry.company? entry.company : 'New Experience'} index={index} handleMovement={handleMovement}>
+                                    <CollapsibleCard cardName={entry.company? entry.company : 'New Experience'} index={index} handleMovement={handleMovement} handleDeletion={() => removeEntry(entry.id)}>
                                         <Experience
                                             data={entry}
                                             handleUpdate={handleEntryUpdate}

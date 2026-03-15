@@ -19,47 +19,76 @@
     flex: 1;
 }
 
-.collapsible header{
-    display: flex;
-
-    position: relative;
-}
-
-.collapse{
-    background-color: var(--color-neutral-150);
+.collapsible-header{
     flex: 1;
-    border: none;
+    background-color: var(--color-neutral-150);
     border-radius: var(--radius-small) var(--radius-small) 0 0;
-    padding: var(--space-medium);
     box-shadow: var(--shadow-lift-light);
 }
 
-.move-bar{
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    
+.collapse{
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: stretch;
+
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+
+    border: none;
+    background-color: transparent;
+    
+    padding: var(--space-medium);
 }
 
-.move-bar .icon-btn{
-    fill: var(--color-neutral-600);
-    width: 40px;
-    padding: 0;
+.collapsible-tool-bar{    
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    gap: var(--space-tiny);
 }
-.move-bar .icon-btn:hover{
+
+
+.collapsible-tool-bar .icon-btn{
+    fill: var(--color-neutral-600);
+    width: 30px;
+    padding: 0;
+
+    transition: fill 0.2s ease;
+
+    object-fit: cover;
+}
+.collapsible-tool-bar .icon-btn:hover{
     fill: var(--color-neutral-900);
 }
 
-.move-bar .up-btn,
-.move-bar .down-btn{
+.collapsible-tool-bar .delete-btn:hover{
+    fill: var(--color-danger);
+}
+
+.collapsible-tool-bar .icon-btn{
     border: none;
-} 
+}
 
+.container .add-btn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
 
+    position: relative;
 
+    margin-bottom: var(--space-medium);
+    
+    background-color: transparent;
+    fill: var(--color-accent-faded);
+    border: 2px dashed var(--color-accent-faded);
+    border-radius: var(--radius-small);
 
+    transition: fill 0.2s ease, border-color 0.2s ease;
+}
 
+.container .add-btn:hover{
+    border-color: var(--color-accent);
+    fill: var(--color-accent);
+}

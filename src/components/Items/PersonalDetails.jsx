@@ -33,7 +33,8 @@ function PersonalDetails({data, handleUpdate}){
                     />
                 </li>
                 <li>
-                    <TextArea
+                    <Input
+                        type='text'
                         id='location'
                         label='Location: '
                         value={data.location ?? ''}

@@ -8,12 +8,21 @@ body{
 
 main{
   display: flex;
-  gap: var(--space-large);
+  justify-content: space-around;
+
+  gap: var(--space-extreme);
   padding: var(--space-medium);
 }
 
 .panel{
-  flex:1;
+  min-width: min(650px, 100%);
+}
+.panel-header{
+  text-align: center;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semi);
+
+  margin-bottom: var(--space-medium);
 }
 
 .icon-btn{

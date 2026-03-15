@@ -1,8 +1,9 @@
+import { ICONS } from "../../Helpers/Icons";
 import Checkbox from "../Inputs/Checkbox";
 import Input from "../Inputs/Input";
 import TextArea from "../Inputs/TextArea";
 
-function Experience({data, handleUpdate, handleRemoval}){
+function Experience({data, handleUpdate}){
     return (
         <div className="entry-container">
             <ul className="input-list">
@@ -67,7 +68,6 @@ function Experience({data, handleUpdate, handleRemoval}){
                     />
                 </li>
             </ul>
-            <button onClick={() => handleRemoval(data.id)}>Delete</button>
         </div>
     );
 }

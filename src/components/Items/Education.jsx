@@ -1,7 +1,8 @@
+import { ICONS } from "../../Helpers/Icons";
 import Checkbox from "../Inputs/Checkbox";
 import Input from "../Inputs/Input";
 
-function Education({data, handleUpdate, handleRemoval}){
+function Education({data, handleUpdate}){
     return (
         <div className="entry-container">
             <ul className="input-list">
@@ -9,7 +10,7 @@ function Education({data, handleUpdate, handleRemoval}){
                     <Input
                         type='text'
                         id='school'
-                        label='school: '
+                        label='School: '
                         value={data.school}
                         handleUpdate={(value) => handleUpdate({...data, school: value})}
                     />
@@ -58,7 +59,6 @@ function Education({data, handleUpdate, handleRemoval}){
                     />
                 </li>
             </ul>
-            <button onClick={() => handleRemoval(data.id)}>Delete</button>
         </div>
     );
 }

@@ -2,7 +2,7 @@ import { ICONS } from '../../Helpers/Icons';
 import '../../styles/CollapsibleCard.css';
 import { useState } from "react";
 
-function CollapsibleCard({cardName, index, handleMovement,  children}){
+function CollapsibleCard({cardName, index, handleMovement, handleDeletion,  children}){
 
     if(typeof cardName !== 'string'){
         throw new TypeError('Expects cardName to be a string');
@@ -14,6 +14,9 @@ function CollapsibleCard({cardName, index, handleMovement,  children}){
 
     if(handleMovement !== undefined && typeof handleMovement !== 'function'){
         throw new TypeError('Expects handleMovement to be a function');
+    }
+    if(handleDeletion !== undefined && typeof handleDeletion !== 'function'){
+        throw new TypeError('Expects handleDeletion to be a function');
     }
 
     const [collapsed, setCollapsed] = useState(false);
@@ -27,12 +30,21 @@ function CollapsibleCard({cardName, index, handleMovement,  children}){
     }
 
     return <section className="collapsible">
-        <header>
-            <button onClick={toggleCollapse} className="collapse">{cardName}</button>
-            {handleMovement && <div className='move-bar'>
-                <button className='icon-btn up-btn' onClick={() => move(-1)}>{ICONS.up}</button>
-                <button className='icon-btn down-btn' onClick={() => move(1)}>{ICONS.down}</button>
-            </div>}
+        <header className='collapsible-header'>
+            <button onClick={toggleCollapse} className="collapse">
+                {cardName}
+                <div className='collapsible-tool-bar'>
+                    {handleMovement && <>
+                        <button className='icon-btn up-btn' onClick={() => move(-1)}>{ICONS.up}</button>
+                        <button className='icon-btn down-btn' onClick={() => move(1)}>{ICONS.down}</button>
+                    </>
+                    }
+                    {handleDeletion && <>
+                        <button className='icon-btn delete-btn' onClick={handleDeletion}>{ICONS.close}</button>
+                    </>
+                    }
+                </div>
+            </button>
         </header>
         <div className={`container ${collapsed? 'collapsed': 'expanded'}`}>
             {!collapsed && children}
