@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import EditPersonalDetailsSection from './components/EditSections/EditPersonalDetailsSection';
-import EditEducationSection from './components/EditSections/EditEducationSection';
-import EditExperienceSection from './components/EditSections/EditExperienceSection';
-import PreviewPersonalDetailsSection from './components/PreviewSections/PreviewPersonalDetailsSection';
-import PreviewEducationSection from './components/PreviewSections/PreviewEducationSection';
-import PreviewExperienceSection from './components/PreviewSections/PreviewExperienceSection';
+import Header from './components/MainLayout/Header';
+import Editor from './components/MainLayout/Editor';
+import Previewer from './components/MainLayout/Previewer';
 
 const EXAMPLE_DATA = {
   personalDetails: {
@@ -16,75 +13,62 @@ const EXAMPLE_DATA = {
   },
   education: [
     {
+      id: crypto.randomUUID(),
       school: 'State University',
       degree: 'Bachelor of Science in Computer Science',
-      startDate: 'Aug 2017',
-      endDate: 'May 2021',
+      startDate: '2017-08',
+      endDate: '2021-05',
       currentStudent: false, 
       location: 'Austin, Texas',
     }
   ],
   experience: [
     {
+      id: crypto.randomUUID(),
       company: 'Tech Solutions Inc.',
       designation: 'Software Developer',
-      startDate: 'Jun 2021',
-      endDate: undefined,
+      startDate: '2021-06',
+      endDate: '',
       currentEmployee: true,
       location: 'Austin, Texas',
-      description: `• Developed and maintained web applications using modern JavaScript frameworks
-      • Collaborated with designers and backend engineers to implement new features
-      • Improved application performance and fixed production issues`
+      description: 
+'• Developed and maintained web applications using modern JavaScript frameworks\n• Collaborated with designers and backend engineers to implement new features\n• Improved application performance and fixed production issues'
     }
   ]
 
 };
 
 function App() {
-  const [personalDetails, setPersonalDetails] = useState({}); 
-  const [educationData, setEducationData] = useState([]);
-  const [experienceData, setExperienceData] = useState([]);
+  const createContent = ([content, setContent]) => ({content, setContent});
+
+  const state = Object.freeze({
+    personalDetails: createContent(useState({})),
+    educationData: createContent(useState([])),
+    experienceData: createContent(useState([])),
+  });
 
   function reset(){
     if(confirm('This action will reset your data.\nAre you sure to proceed?')){
-      setPersonalDetails({});
-      setEducationData([]);
-      setExperienceData([]);
+      state.personalDetails.setContent({});
+      state.educationData.setContent([]);
+      state.experienceData.setContent([]);
     }
   }
 
   function loadExampleData(){
     if(confirm('This action will reset your data with example data.\nAre you sure to proceed?')){
-      setPersonalDetails(EXAMPLE_DATA.personalDetails);
-      setEducationData(EXAMPLE_DATA.education);
-      setExperienceData(EXAMPLE_DATA.experience);
+      state.personalDetails.setContent(EXAMPLE_DATA.personalDetails);
+      state.educationData.setContent(EXAMPLE_DATA.education);
+      state.experienceData.setContent(EXAMPLE_DATA.experience);
     }
   }
 
   return (
     <>
-      <header>
-        <h1>CV Application</h1>
-        <ul>
-          <li>
-            <button onClick={reset}>Reset</button>
-          </li>
-          <li>
-            <button onClick={loadExampleData}>Load Example</button>
-          </li>
-        </ul>
-      </header>
+      <Header handleReset={reset} handleExampleLoad={loadExampleData}/>
       <main>
-        <div className="panel">
-          <EditPersonalDetailsSection entry={personalDetails} handleUpdate={data => setPersonalDetails(data)}/>
-          <EditEducationSection entries={educationData} handleUpdate={data => setEducationData(data)}/>
-          <EditExperienceSection entries={experienceData} handleUpdate={data => setExperienceData(data)} />
-        </div>
-        <div className="panel">
-          <PreviewPersonalDetailsSection entry={personalDetails}/>
-          <PreviewEducationSection entries={educationData} />
-          <PreviewExperienceSection entries={experienceData} />
-        </div>
+        <Editor state={state} />
+        <Previewer state={state} />
       </main>
     </>
   )

@@ -15,7 +15,7 @@ function CollapsibleCard({cardName, index, handleMovement,  children}){
         throw new TypeError('Expects handleMovement to be a function');
     }
 
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
 
     function toggleCollapse(){
         setCollapsed(!collapsed);

@@ -46,7 +46,7 @@ function Experience({data, handleUpdate, handleRemoval}){
                         id='currentEmployee'
                         label='is currently employed here: '
                         value={data.currentEmployee}
-                        handleUpdate={(value) => handleUpdate({...data, currentEmployee: value})}
+                        handleUpdate={(value) => handleUpdate({...data, currentEmployee: value, ...(value? {endDate: ''}: {})})}
                     />
                 </li>
                 <li>

@@ -45,7 +45,7 @@ function Education({data, handleUpdate, handleRemoval}){
                         id='currentStudent'
                         label='Is currently studying here: '
                         value={data.currentStudent}
-                        handleUpdate={(value) => handleUpdate({...data, currentStudent: value})}
+                        handleUpdate={(value) => handleUpdate({...data, currentStudent: value, ...(value? {endDate: ''}: {})})}
                     />
                 </li>
                 <li>
