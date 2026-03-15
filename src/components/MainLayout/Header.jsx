@@ -1,7 +1,7 @@
 import { ICONS } from '../../Helpers/Icons';
 import '../../styles/Header.css';
 
-function Header({handleReset, handleExampleLoad}){
+function Header({handleReset, handleExampleLoad, handleDownload}){
     return <header className="header">
         <div className='logo'>
             {ICONS.logo}
@@ -13,6 +13,9 @@ function Header({handleReset, handleExampleLoad}){
           </li>
           <li>
             <button className='tool load' onClick={handleExampleLoad}>{ICONS.sparkle} Load Example</button>
+          </li>
+          <li>
+            <button className='tool download' onClick={handleDownload}>{ICONS.download} Download PDF</button>
           </li>
         </ul>
       </header>

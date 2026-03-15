@@ -2,6 +2,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+body{
+  background-color: var(--color-bg-base);
+}
+
 main{
   display: flex;
   gap: var(--space-large);

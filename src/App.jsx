@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './App.css';
 import Header from './components/MainLayout/Header';
 import Editor from './components/MainLayout/Editor';
 import Previewer from './components/MainLayout/Previewer';
+import { useReactToPrint } from 'react-to-print';
 
 const EXAMPLE_DATA = {
   personalDetails: {
@@ -47,6 +48,11 @@ function App() {
     experienceData: createContent(useState([])),
   });
 
+  const previewRef = useRef();
+
+  const downloadPreview = useReactToPrint({contentRef: previewRef, documentTitle: `Resume_${state.personalDetails.content.fullName}`})
+
+
   function reset(){
     if(confirm('This action will reset your data.\nAre you sure to proceed?')){
       state.personalDetails.setContent({});
@@ -65,10 +71,10 @@ function App() {
 
   return (
     <>
-      <Header handleReset={reset} handleExampleLoad={loadExampleData}/>
+      <Header handleReset={reset} handleExampleLoad={loadExampleData} handleDownload={downloadPreview}/>
       <main>
         <Editor state={state} />
-        <Previewer state={state} />
+        <Previewer ref={previewRef} state={state} />
       </main>
     </>
   )

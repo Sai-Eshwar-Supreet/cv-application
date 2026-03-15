@@ -59,11 +59,20 @@
 
 
 .header .load:hover svg{
-    fill: var(--color-accent);
-    animation: pulse-color 1s infinite alternate;
+    animation: load-pulse 1s infinite alternate;
 }
 
-@keyframes pulse-color {
+.header .download:hover svg{
+    fill: var(--color-accent);
+    animation: download-oscillate 1s infinite forwards ease;
+}
+
+@keyframes load-pulse {
     from{fill: var(--color-neutral-600);}
     to{fill: var(--color-accent);}
+}
+@keyframes download-oscillate {
+    0%{transform: translateY(0px)}
+    50%{transform: translateY(2px)}
+    100%{transform: translateY(0px)}
 }
