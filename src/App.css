@@ -19,8 +19,7 @@ main{
 
 .panel-header{
   text-align: center;
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-semi);
+  font-size: var(--font-size-medium);
 
   margin-bottom: var(--space-medium);
 }

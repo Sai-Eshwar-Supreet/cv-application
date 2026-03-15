@@ -6,9 +6,12 @@
 }
 
 .resume-container{
-    border: 2px solid var(--color-neutral-600);
-    
-    box-shadow: var(--shadow-heavy);
+    background: white;
+
+    border-radius: var(--radius-small);
+    border: 1px solid var(--color-neutral-200);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
 .resume{
@@ -86,6 +89,7 @@
 
 .entry-element{
     padding-left: var(--space-large);
+    margin-bottom: var(--space-tiny);
 }
 
 .entry-element.primary{

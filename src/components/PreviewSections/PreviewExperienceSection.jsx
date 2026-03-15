@@ -10,11 +10,11 @@ function PreviewExperienceSection({entries}){
                 </h3>
             </header>
             {
-                entries.map((entry, index) => {
+                entries.map((entry) => {
                     return (
                         <section className="resume-entry" key={entry.id}>
                             <header>
-                                <h4 className="entry-element primary">{index + 1}. {entry.company}</h4>
+                                <h4 className="entry-element primary">{entry.company}</h4>
                                 <p className="entry-element secondary">{entry.designation}</p> 
                                 <p className="entry-element tertiary">{entry.startDate}-{entry.currentEmployee? 'Present' : entry.endDate}</p>
                                 <p className="entry-element tertiary">{entry.location}</p>
