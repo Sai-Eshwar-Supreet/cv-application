@@ -1,3 +1,5 @@
+import '../../styles/InputComponents.css';
+
 import EditPersonalDetailsSection from '../EditSections/EditPersonalDetailsSection';
 import EditEducationSection from '../EditSections/EditEducationSection';
 import EditExperienceSection from '../EditSections/EditExperienceSection';

@@ -5,7 +5,7 @@ import TextArea from "../Inputs/TextArea";
 function Experience({data, handleUpdate, handleRemoval}){
     return (
         <div className="entry-container">
-            <ul>
+            <ul className="input-list">
                 <li>
                     <Input
                         type='text'
@@ -24,7 +24,7 @@ function Experience({data, handleUpdate, handleRemoval}){
                         handleUpdate={(value) => handleUpdate({...data, designation: value})}
                     />
                 </li>
-                <li>
+                <li className="date-group">
                     <Input
                         type='month'
                         id='startDate'

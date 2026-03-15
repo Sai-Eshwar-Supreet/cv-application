@@ -4,7 +4,7 @@ import TextArea from "../Inputs/TextArea";
 function PersonalDetails({data, handleUpdate}){
     return (
         <div className="entry-container">
-            <ul>
+            <ul className="input-list">
                 <li>
                     <Input
                         type='text'

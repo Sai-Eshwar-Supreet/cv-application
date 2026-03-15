@@ -33,6 +33,7 @@ ul{
     --font-weight-bold: 700; 
 
     /* Spacing */
+    --space-tiny: 0.25rem;
     --space-small: 0.5rem;
     --space-medium: 1rem;
     --space-large: 1.5rem;
@@ -54,7 +55,7 @@ ul{
     --color-neutral-900: black;
     --color-neutral-600: gray;
     --color-neutral-200: lightgray;
-    --color-neutral-150: rgb(238, 235, 235);
+    --color-neutral-150: rgb(235, 235, 235);
     --color-neutral-100: white;
 
     --color-accent: #3b84cc;

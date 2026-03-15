@@ -4,7 +4,7 @@ import Input from "../Inputs/Input";
 function Education({data, handleUpdate, handleRemoval}){
     return (
         <div className="entry-container">
-            <ul>
+            <ul className="input-list">
                 <li>
                     <Input
                         type='text'
@@ -23,7 +23,7 @@ function Education({data, handleUpdate, handleRemoval}){
                         handleUpdate={(value) => handleUpdate({...data, degree: value})}
                     />
                 </li>
-                <li>
+                <li className="date-group">
                     <Input
                         type='month'
                         id='startDate'
