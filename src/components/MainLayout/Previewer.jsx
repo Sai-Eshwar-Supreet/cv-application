@@ -1,3 +1,5 @@
+import '../../styles/Previewer.css';
+
 import PreviewPersonalDetailsSection from '../PreviewSections/PreviewPersonalDetailsSection';
 import PreviewEducationSection from '../PreviewSections/PreviewEducationSection';
 import PreviewExperienceSection from '../PreviewSections/PreviewExperienceSection';

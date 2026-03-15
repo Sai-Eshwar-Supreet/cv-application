@@ -2,4 +2,34 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    margin-bottom: var(--space-medium);
 }
+
+.collapsible > *{
+    flex: 1;
+}
+
+.collapsible header{
+    display: flex;
+
+    position: relative;
+}
+
+.collapse{
+    flex: 1;
+}
+
+.move-bar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+
+

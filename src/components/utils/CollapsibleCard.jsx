@@ -1,3 +1,4 @@
+import { ICONS } from '../../Helpers/Icons';
 import '../../styles/CollapsibleCard.css';
 import { useState } from "react";
 
@@ -26,13 +27,13 @@ function CollapsibleCard({cardName, index, handleMovement,  children}){
     }
 
     return <section className="collapsible">
-        <div>
-            <header><button onClick={toggleCollapse} className="collapse">{cardName}</button></header>
+        <header>
+            <button onClick={toggleCollapse} className="collapse">{cardName}</button>
             {handleMovement && <div className='move-bar'>
-                <button onClick={() => move(-1)}>Move up</button>
-                <button onClick={() => move(1)}>Move down</button>
+                <button className='icon-btn up-btn' onClick={() => move(-1)}>{ICONS.up}</button>
+                <button className='icon-btn down-btn' onClick={() => move(1)}>{ICONS.down}</button>
             </div>}
-        </div>
+        </header>
         <div className={`container ${collapsed? 'collapsed': 'expanded'}`}>
             {!collapsed && children}
         </div>

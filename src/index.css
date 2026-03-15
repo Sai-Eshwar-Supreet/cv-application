@@ -12,6 +12,11 @@ img{
     display: block;
 }
 
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
 
 /* ==================== TOKENS ==================== */
 

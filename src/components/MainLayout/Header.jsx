@@ -1,12 +1,18 @@
+import { ICONS } from '../../Helpers/Icons';
+import '../../styles/Header.css';
+
 function Header({handleReset, handleExampleLoad}){
     return <header className="header">
-        <h1>CV Application</h1>
-        <ul>
+        <div className='logo'>
+            {ICONS.logo}
+            <h1 className='title'> CV Application</h1>
+        </div>
+        <ul className='tool-bar'>
           <li>
-            <button onClick={handleReset}>Reset</button>
+            <button className='tool reset' onClick={handleReset}>{ICONS.restore} Reset</button>
           </li>
           <li>
-            <button onClick={handleExampleLoad}>Load Example</button>
+            <button className='tool load' onClick={handleExampleLoad}>{ICONS.sparkle} Load Example</button>
           </li>
         </ul>
       </header>
