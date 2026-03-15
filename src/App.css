@@ -7,16 +7,16 @@ body{
 }
 
 main{
-  display: flex;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(min(550px, 100%), 1fr));
+
   justify-content: space-around;
 
   gap: var(--space-extreme);
   padding: var(--space-medium);
 }
 
-.panel{
-  min-width: min(650px, 100%);
-}
 .panel-header{
   text-align: center;
   font-size: var(--font-size-large);
