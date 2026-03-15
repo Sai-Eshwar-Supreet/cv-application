@@ -18,6 +18,7 @@
     display: flex;
     justify-self: center;
     align-items: center;
+    gap: var(--space-small);
 }
 
 .header svg{
@@ -30,7 +31,9 @@
 }
 
 .header .tool-bar{
+    flex: 1;
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-small);
     align-items: center;
 
@@ -70,7 +73,7 @@
     animation: download-oscillate 1s infinite forwards ease;
 }
 
-@media (max-width: 786px) {
+@media (max-width: 1024px) {
     .header{
         z-index: 1;
         position:sticky;
@@ -78,6 +81,7 @@
     }
     .header .tool-bar{
         margin: var(--space-small) 0;
+        justify-content: center;
     }
 }
 

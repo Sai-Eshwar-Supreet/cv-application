@@ -28,7 +28,7 @@
     border-bottom: 2px solid var(--color-accent);
 }
 
-.hero-section .resume-header{
+.resume-section.hero-section .resume-header{
     font-size: var(--font-size-extra-large);
     font-weight: var(--font-weight-semi);
 }
