@@ -3,7 +3,16 @@
     flex-direction: column;
     width: 100%;
 
+    position: relative;
+
     margin-bottom: var(--space-medium);
+    box-shadow: var(--shadow-lift-heavy);
+
+    border-radius: var(--radius-small);
+}
+
+.collapsible .container.expanded{
+    padding: var(--space-medium);
 }
 
 .collapsible > *{
@@ -17,7 +26,12 @@
 }
 
 .collapse{
+    background-color: var(--color-neutral-150);
     flex: 1;
+    border: none;
+    border-radius: var(--radius-small) var(--radius-small) 0 0;
+    padding: var(--space-medium);
+    box-shadow: var(--shadow-lift-light);
 }
 
 .move-bar{
@@ -30,6 +44,22 @@
     justify-content: center;
     align-items: stretch;
 }
+
+.move-bar .icon-btn{
+    fill: var(--color-neutral-600);
+    width: 40px;
+    padding: 0;
+}
+.move-bar .icon-btn:hover{
+    fill: var(--color-neutral-900);
+}
+
+.move-bar .up-btn,
+.move-bar .down-btn{
+    border: none;
+} 
+
+
 
 
 

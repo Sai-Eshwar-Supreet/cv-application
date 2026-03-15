@@ -54,6 +54,7 @@ ul{
     --color-neutral-900: black;
     --color-neutral-600: gray;
     --color-neutral-200: lightgray;
+    --color-neutral-150: rgb(238, 235, 235);
     --color-neutral-100: white;
 
     --color-accent: #3b84cc;

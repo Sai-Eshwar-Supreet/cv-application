@@ -3,7 +3,7 @@ import Input from "../Inputs/Input";
 
 function Education({data, handleUpdate, handleRemoval}){
     return (
-        <div>
+        <div className="entry-container">
             <ul>
                 <li>
                     <Input

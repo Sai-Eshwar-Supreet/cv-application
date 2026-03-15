@@ -4,7 +4,7 @@ import TextArea from "../Inputs/TextArea";
 
 function Experience({data, handleUpdate, handleRemoval}){
     return (
-        <div>
+        <div className="entry-container">
             <ul>
                 <li>
                     <Input
